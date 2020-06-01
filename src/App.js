@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Content from './components/content'
 
+import Panier from './components/panier'
+
 class App extends React.Component {
 
   componentDidMount () {
@@ -28,18 +30,14 @@ class App extends React.Component {
 
     return (
       <Container className="App" fluid>
-        {/* header fixed */}
         <Row></Row>
-        {/* Top */}
         <Row className="top">
           <div className="title">
-            Bienvenue sur AchetezDesCouleurs.com
+            Proof Of Concept
           </div>
+          <Panier/>
         </Row>
-        {/* Content */}
         <Content images={images}/>
-        {/* footer */}
-        <Row></Row>
       </Container>
     )
   }

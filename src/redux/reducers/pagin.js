@@ -1,7 +1,6 @@
 import {
   PAGIN_UP,
-  PAGIN_DOWN,
-  SET_PAGIN
+  PAGIN_DOWN
 } from '../actions'
 
 const initialState = 15
@@ -12,8 +11,6 @@ export function pagin(state = initialState, action) {
       return state + 15
     case PAGIN_DOWN:
       return state - 15 >= 15 ? state - 15 : 15
-    case SET_PAGIN:
-      return action.payload
     default:
       return state
   }

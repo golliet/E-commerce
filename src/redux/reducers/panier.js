@@ -11,9 +11,7 @@ export function panier(state = initialState, action) {
       state.push(action.payload)
       return state
     case REMOVE_IMAGE:
-      return [
-        
-      ]
+      return state.filter(image => image.id !== action.payload.id)
     default:
       return state
   }

@@ -8,11 +8,11 @@ function Pagination (props) {
   const { paginUp, paginDown, pagin } = props
 
   return <Row className="pagin">
-    <Col onClick={paginDown}> {'<'} </Col>
+    <Col className="selectP" onClick={paginDown}> {'<'} </Col>
     <Col>
       { pagin / 15 }
     </Col>
-    <Col onClick={paginUp}> {'>'} </Col>
+    <Col className="selectP" onClick={paginUp}> {'>'} </Col>
   </Row>
 }
 

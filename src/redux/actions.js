@@ -25,10 +25,6 @@ export function paginDown() {
   return { type: PAGIN_DOWN}
 }
 
-export function setPagin(index) {
-  return { type: SET_PAGIN, payload: index }
-}
-
 // Panier
 
 export function addImage(image) {
