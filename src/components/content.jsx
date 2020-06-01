@@ -1,5 +1,6 @@
 import React from 'react'
-import { Col, Row, Container, Image } from 'react-bootstrap'
+import { Row, Container } from 'react-bootstrap'
+import ImageContainer from './imageContainer'
 
 function Content (props) {
 
@@ -10,11 +11,7 @@ function Content (props) {
       <Row>
         {
           images.slice(0, 15).map((img) => {
-            return <Col md={3} sm={6} xs={12}>
-              { console.log(img.url)}
-              <Image key={'image-' + img.id} src={img.url} className="image" rounded />
-              <div className="imageTitle">{img.title}</div>
-            </Col>
+            return <ImageContainer key={'image-' + img.id} image={img}/>
           })
         }
       </Row>

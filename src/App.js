@@ -3,7 +3,7 @@ import './App.css'
 import { connect } from 'react-redux'
 import { setImages } from './redux/actions'
 import Axios from 'axios'
-import {Row, Col, Container} from 'react-bootstrap'
+import {Row, Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Content from './components/content'
@@ -48,6 +48,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     images: state.images,
+    panier: state.panier,
   }
 }
 

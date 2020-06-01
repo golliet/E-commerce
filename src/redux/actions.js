@@ -3,7 +3,10 @@
 
 export const SET_IMAGES = 'SET_IMAGE'
 export const REMOVE_IMAGE = 'REMOVE_IMAGE'
-export const ADD_IMAGE = 'ADD_IMAGES'
+export const ADD_IMAGE = 'ADD_IMAGE'
+
+export const PAGIN_UP = 'PAGIN_UP'
+export const PAGIN_DOWN = 'PAGIN_DOWN'
 
 // Images
 

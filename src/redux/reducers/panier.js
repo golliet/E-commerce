@@ -1,16 +1,15 @@
 import {
   ADD_IMAGE,
   REMOVE_IMAGE
-} from '../actions.js'
+} from '../actions'
 
 const initialState = []
 
 export function panier(state = initialState, action) {
   switch (action.type) {
     case ADD_IMAGE:
-      return [
-        state.push(action.payload)
-      ]
+      state.push(action.payload)
+      return state
     case REMOVE_IMAGE:
       return [
         
