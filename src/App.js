@@ -9,13 +9,14 @@ class App extends React.Component {
   componentDidMount () {
     const { setImages, images } = this.props
     const urlImages = 'https://jsonplaceholder.typicode.com/photos'
-    if (images.length != 0)
+    if (images.length === 0)
       Axios.get(urlImages).then((data) => {
         setImages(data.data)
       })
   }
 
   render () {
+
     return (
       <div className="App">
         <header className="App-header">
