@@ -1,13 +1,13 @@
 import {
-  ALL_IMAGES
+  SET_IMAGES
 } from '../actions'
 
 const initialState = []
 
-function images(state = initialState, action) {
+export function images(state = initialState, action) {
   switch (action.type) {
-    case ALL_IMAGES:
-      return []
+    case SET_IMAGES:
+      return action.payload
     default:
       return state
   }

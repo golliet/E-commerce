@@ -5,12 +5,16 @@ import {
 
 const initialState = []
 
-function panier(state = initialState, action) {
+export function panier(state = initialState, action) {
   switch (action.type) {
     case ADD_IMAGE:
-      return []
+      return [
+        state.push(action.payload)
+      ]
     case REMOVE_IMAGE:
-      return []
+      return [
+        
+      ]
     default:
       return state
   }
