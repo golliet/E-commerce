@@ -9,7 +9,6 @@ function ImageContainer (props) {
   const { image, addImage, panier } = props
 
   const select = () => {
-    console.log('ici', panier, panier.length)
     if (!panier.length || !panier.find(img => img.id === image.id))
       addImage(image)
   }
