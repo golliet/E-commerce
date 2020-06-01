@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #f6f6f6;
 }
 
 .App-logo {
@@ -35,4 +36,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.top {
+  height: 500px;
+  background: black;
+  margin-bottom: 50px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  font-size: 40px;
+}
+
+/* Images */
+
+.image {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.imageTitle {
+  margin-bottom: 15px;
 }
