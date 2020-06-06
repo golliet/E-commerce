@@ -87,7 +87,7 @@
   top: -5px;
   right: 22px;
   font-size: 24px;
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -140,4 +140,10 @@
   max-height: 400px;
   min-height: 35px;
   width: 274px;
+}
+
+.pricePanier {
+  margin: 0px 15px 15px 15px;
+  text-align: center;
+  font-size: 20px;
 }

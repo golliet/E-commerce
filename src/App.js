@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import { connect } from 'react-redux'
 import { setImages } from './redux/actions'
-import Axios from 'axios'
 import {Row, Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 

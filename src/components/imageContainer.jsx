@@ -15,7 +15,8 @@ function ImageContainer (props) {
   return <Col className="imageContainer" md={3} sm={6} xs={12}>
     <div className="plus" onClick={select}>+</div>
     <Image key={'image-' + image.id} src={require('../img/' + image.url)} className="image" rounded />
-    <div className="imageTitle">{image.title}</div>
+    <div>{image.title}</div>
+    <div className="imageTitle">{image.price / 100} €</div>
   </Col>
 }
 
