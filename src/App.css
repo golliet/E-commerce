@@ -124,9 +124,24 @@
 .squarePanier{
   height: 25px;
   width: 25px;
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
+}
+
+.indicePanier { 
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  z-index: 10;
+  color: rgba(255, 7, 7, 0.7);
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
 }
 
 .squarePanier:hover {
