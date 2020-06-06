@@ -6,6 +6,8 @@ import Axios from 'axios'
 import {Row, Container} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+import jsonImage from './data/catalogue.json'
+
 import Content from './components/content'
 
 import Panier from './components/panier'
@@ -13,15 +15,8 @@ import Panier from './components/panier'
 class App extends React.Component {
 
   componentDidMount () {
-    const { setImages, images } = this.props
-    const urlImages = 'https://jsonplaceholder.typicode.com/photos'
-    if (images.length === 0)
-      Axios
-        .get(urlImages)
-        .then((data) => {
-          setImages(data.data)
-        })
-        .catch((error) => {console.log(error)})
+    const { setImages } = this.props
+    setImages(jsonImage.items)
   }
   
   render () {

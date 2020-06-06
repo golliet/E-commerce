@@ -1,0 +1,67 @@
+{
+  "items" : [
+    {
+      "albumId": 1,
+      "id":	1,
+      "title":	"Chaussure rouge",
+      "url":	"c1.jpg",
+      "price": 8999
+    },
+    {
+      "albumId": 1,
+      "id":	2,
+      "title":	"Chaussure verte fluo",
+      "url":	"c2.jpg",
+      "price": 4999
+    },
+    {
+      "albumId": 1,
+      "id":	3,
+      "title":	"Chaussure bleu",
+      "url":	"c3.jpeg",
+      "price": 7999
+    },
+    {
+      "albumId": 1,
+      "id":	4,
+      "title":	"Grosse chaussure rouge",
+      "url":	"c4.jpg",
+      "price": 1999
+    },
+    {
+      "albumId": 1,
+      "id":	5,
+      "title":	"Chaussure bleu et grise",
+      "url":	"c5.jpg",
+      "price": 2999
+    },
+    {
+      "albumId": 1,
+      "id":	7,
+      "title":	"Chaussure jaune fluo",
+      "url":	"c7.jpeg",
+      "price": 7999
+    },
+    {
+      "albumId": 1,
+      "id":	9,
+      "title":	"Chaussure noire",
+      "url":	"c9.jpeg",
+      "price": 999
+    },
+    {
+      "albumId": 1,
+      "id":	10,
+      "title":	"Chaussure verte",
+      "url":	"c10.jpg",
+      "price": 8999
+    },
+    {
+      "albumId": 1,
+      "id":	11,
+      "title":	"Chaussure blanche",
+      "url":	"c11.jpeg",
+      "price": 4999
+    }
+  ]
+}

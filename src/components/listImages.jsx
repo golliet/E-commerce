@@ -17,7 +17,7 @@ function listImages (props) {
           return <Row key={'panier-' + image.id}>
             <Col>
               <div className="delete" onClick={() => {removeImage(image)}}>x</div>
-              <Image key={'image-' + image.id} src={image.url} className="image" rounded />
+              <Image key={'image-' + image.id} src={require('../img/' + image.url)} className="image" rounded />
             </Col>
             <Col>
               {image.title}

@@ -3,7 +3,6 @@ import { Col, Image} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { addImage } from '../redux/actions'
 
-
 function ImageContainer (props) {
 
   const { image, addImage, panier } = props
@@ -15,7 +14,7 @@ function ImageContainer (props) {
 
   return <Col className="imageContainer" md={3} sm={6} xs={12}>
     <div className="plus" onClick={select}>+</div>
-    <Image key={'image-' + image.id} src={image.url} className="image" rounded />
+    <Image key={'image-' + image.id} src={require('../img/' + image.url)} className="image" rounded />
     <div className="imageTitle">{image.title}</div>
   </Col>
 }
