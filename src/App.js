@@ -11,6 +11,10 @@ import Content from './components/content'
 import Panier from './components/panier'
 import CommanderModal from './components/commanderModal'
 
+import { ToastContainer } from 'react-toastify'
+
+import 'react-toastify/dist/ReactToastify.css'
+
 class App extends React.Component {
 
   state = {
@@ -46,6 +50,7 @@ class App extends React.Component {
             ? <CommanderModal showModale={this.showModale}/>
             : null
         }
+        <ToastContainer />
       </Container>
     )
   }
