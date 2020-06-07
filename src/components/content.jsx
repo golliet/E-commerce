@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 function Content (props) {
 
   const { images, pagin } = props
-  console.log(images)
+
   return (
     <Container>
       <Row>

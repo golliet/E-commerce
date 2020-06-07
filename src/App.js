@@ -8,19 +8,28 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import jsonImage from './data/catalogue.json'
 
 import Content from './components/content'
-
 import Panier from './components/panier'
+import CommanderModal from './components/commanderModal'
 
 class App extends React.Component {
+
+  state = {
+    show: false
+  }
 
   componentDidMount () {
     const { setImages } = this.props
     setImages(jsonImage.items)
   }
   
+  showModale = (bool) => {
+    this.setState({ show: bool})
+  }
+
   render () {
 
     const { images } = this.props
+    const { show } = this.state
 
     return (
       <Container className="App" fluid>
@@ -29,9 +38,14 @@ class App extends React.Component {
           <div className="title">
             Proof Of Concept
           </div>
-          <Panier/>
+          <Panier showModale={this.showModale}/>
         </Row>
         <Content images={images}/>
+        {
+          show
+            ? <CommanderModal showModale={this.showModale}/>
+            : null
+        }
       </Container>
     )
   }

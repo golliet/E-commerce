@@ -4,19 +4,21 @@ import ListImages from './listImages'
 import { connect } from 'react-redux'
 import store from '../redux/store'
 
-function Panier () {
+function Panier (props) {
 
   const [nbItems, setCurrent] = useState(0)
+  const { panier, showModale } = props
 
   store.subscribe(() => {
-    setCurrent(store.getState().panier.length)
+    if (nbItems !== store.getState().panier.length)
+      setCurrent(store.getState().panier.length)
   })
 
   const popover = (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Panier</Popover.Title>
       <Popover.Content className="overflowList" >
-        <ListImages/>
+        <ListImages panier={panier} showModale={showModale}/>
       </Popover.Content>
     </Popover>
   )

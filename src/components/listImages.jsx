@@ -1,25 +1,16 @@
-import React, { useState } from 'react'
-import { connect } from 'react-redux'
-import { removeImage} from '../redux/actions'
+import React from 'react'
 import { Col, Image, Row, Button} from 'react-bootstrap'
-import store from '../redux/store'
 
 const ListImages = (props) => {
 
-  const { panier, removeImage } = props
+  const { panier, removeImage, showModale } = props
 
-  const [currentPanier, setCurrent] = useState(panier)
-
-  store.subscribe(() => {
-    setCurrent([...store.getState().panier])
-  })
-
-  if (currentPanier.length === 0)
+  if (panier.length === 0)
     return <span>Votre panier est vide</span>
   return (
     <div>
       {
-        currentPanier.map((image) => {
+        panier.map((image) => {
           return <Row key={'panier-' + image.id}>
             <Col>
               <div className="delete" onClick={() => {removeImage(image)}}>x</div>
@@ -33,25 +24,13 @@ const ListImages = (props) => {
         })
       }
       <div className="pricePanier">
-        Prix total : {currentPanier.reduce((a, b) => a + b.price, 0) / 100} €
+        Prix total : {panier.reduce((a, b) => a + b.price, 0) / 100} €
       </div>
       <div className="pricePanier">
-        <Button variant="primary">Commander</Button>
+        <Button variant="primary" onClick={() => {showModale(true)}}>Commander</Button>
       </div>
     </div>
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    panier: state.panier,
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeImage: image => dispatch(removeImage(image)),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ListImages)
+export default ListImages
