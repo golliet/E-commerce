@@ -3,11 +3,12 @@ import { Popover, OverlayTrigger } from 'react-bootstrap'
 import ListImages from './listImages'
 import { connect } from 'react-redux'
 import store from '../redux/store'
+import { removeImage } from '../redux/actions'
 
 function Panier (props) {
 
   const [nbItems, setCurrent] = useState(0)
-  const { panier, showModale } = props
+  const { panier, showModale, removeImage } = props
 
   store.subscribe(() => {
     if (nbItems !== store.getState().panier.length)
@@ -18,7 +19,7 @@ function Panier (props) {
     <Popover id="popover-basic">
       <Popover.Title as="h3">Panier</Popover.Title>
       <Popover.Content className="overflowList" >
-        <ListImages panier={panier} showModale={showModale}/>
+        <ListImages panier={panier} showModale={showModale} removeImage={removeImage}/>
       </Popover.Content>
     </Popover>
   )
@@ -43,4 +44,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(Panier)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeImage: image => dispatch(removeImage(image)),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Panier)
