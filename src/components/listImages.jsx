@@ -31,13 +31,13 @@ const ListImages = (props) => {
       }
       <div>
         {
-          status.filter(a => a.eligible ).length == 1
-            ? <div className="disclaimerAlma">Paiement en 3x sans frais avec Alma disponible !</div>
+          status.filter(a => a.eligible ).length === 1
+            ? <div className="disclaimerAlma">Paiement en 3x avec Alma disponible !</div>
             : null
         }
         {
-          status.filter(a => a.eligible ).length == 2
-            ? <div className="disclaimerAlma">Paiement en 3x ou 4x sans frais avec Alma disponible !</div>
+          status.filter(a => a.eligible ).length === 2
+            ? <div className="disclaimerAlma">Paiement en 3x ou 4x avec Alma disponible !</div>
             : null
         }
       </div>
