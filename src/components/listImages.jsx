@@ -1,9 +1,15 @@
 import React from 'react'
 import { Col, Image, Row, Button} from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
 
 const ListImages = (props) => {
 
-  const { panier, removeImage, showModale } = props
+  const { panier, removeImage, status } = props
+  const history = useHistory()
+
+  function handleClick() {
+    history.push('/panier')
+  }
 
   if (panier.length === 0)
     return <span>Votre panier est vide</span>
@@ -23,11 +29,23 @@ const ListImages = (props) => {
           </Row>
         })
       }
+      <div>
+        {
+          status.filter(a => a.eligible ).length == 1
+            ? <div className="disclaimerAlma">Paiement en 3x sans frais avec Alma disponible !</div>
+            : null
+        }
+        {
+          status.filter(a => a.eligible ).length == 2
+            ? <div className="disclaimerAlma">Paiement en 3x ou 4x sans frais avec Alma disponible !</div>
+            : null
+        }
+      </div>
       <div className="pricePanier">
         Prix total : {panier.reduce((a, b) => a + b.price, 0) / 100} €
       </div>
       <div className="pricePanier">
-        <Button variant="primary" onClick={() => {showModale(true)}}>Commander</Button>
+        <Button variant="primary" onClick={handleClick}>Commander</Button>
       </div>
     </div>
   )

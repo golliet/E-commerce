@@ -9,7 +9,6 @@ import jsonImage from './data/catalogue.json'
 
 import Content from './components/content'
 import Panier from './components/panier'
-import CommanderModal from './components/commanderModal'
 
 import { ToastContainer } from 'react-toastify'
 
@@ -17,23 +16,18 @@ import 'react-toastify/dist/ReactToastify.css'
 
 class App extends React.Component {
 
-  state = {
-    show: false
-  }
-
   componentDidMount () {
     const { setImages } = this.props
     setImages(jsonImage.items)
   }
-  
-  showModale = (bool) => {
-    this.setState({ show: bool})
+
+  mainPage () {
+    return 
   }
 
   render () {
 
     const { images } = this.props
-    const { show } = this.state
 
     return (
       <Container className="App" fluid>
@@ -42,14 +36,9 @@ class App extends React.Component {
           <div className="title">
             Proof Of Concept
           </div>
-          <Panier showModale={this.showModale}/>
+          <Panier/>
         </Row>
         <Content images={images}/>
-        {
-          show
-            ? <CommanderModal showModale={this.showModale}/>
-            : null
-        }
         <ToastContainer />
       </Container>
     )

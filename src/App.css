@@ -163,6 +163,12 @@
   font-size: 20px;
 }
 
+.disclaimerAlma{
+  text-align: center;
+  font-weight: 511;
+  margin-bottom: 15px;
+}
+
 /* CommanderModal */
 
 .boxStatus{

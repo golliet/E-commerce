@@ -4,22 +4,39 @@ import ListImages from './listImages'
 import { connect } from 'react-redux'
 import store from '../redux/store'
 import { removeImage } from '../redux/actions'
+import Axios from 'axios'
+
 
 function Panier (props) {
 
   const [nbItems, setCurrent] = useState(0)
-  const { panier, showModale, removeImage } = props
+  const [status, setStatus] = useState([])
+  const { panier, removeImage } = props
 
   store.subscribe(() => {
-    if (nbItems !== store.getState().panier.length)
+    if (nbItems !== store.getState().panier.length){
       setCurrent(store.getState().panier.length)
+      Axios
+        .post('http://localhost:5000/payments/eligibility', {
+          'payment': {
+            'purchase_amount': panier.reduce((a, b) => a + b.price, 0),     // Montant de l'achat, en centimes
+            'installments_counts': [3, 4]  // Nombres d'échéances à évaluer
+          }
+        })
+        .then((data) => {
+          setStatus(data.data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   })
 
   const popover = (
     <Popover id="popover-basic">
       <Popover.Title as="h3">Panier</Popover.Title>
       <Popover.Content className="overflowList" >
-        <ListImages panier={panier} showModale={showModale} removeImage={removeImage}/>
+        <ListImages panier={panier} removeImage={removeImage} status={status}/>
       </Popover.Content>
     </Popover>
   )
