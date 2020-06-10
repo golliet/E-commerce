@@ -99,7 +99,6 @@ const PagePanier = (props) => {
                     })
                     : null
                 }
-                <div>ici</div>
                 {
                   eligible
                     ? <div className="buttonPayer" >
